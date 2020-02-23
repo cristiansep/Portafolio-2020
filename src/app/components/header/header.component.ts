@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../services/usuario/usuario.service';
+import { Usuario } from '../../models/usuario.model';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+  usuarios: Usuario[] = [];
+
+  constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.cargarUsuario();
+  }
+
+
+
+  cargarUsuario() {
+
+    this.usuarioService.cargarUsuario()
+      .subscribe((resp: any) => {
+        this.usuarios = resp.usuarios;
+      });
   }
 
 }

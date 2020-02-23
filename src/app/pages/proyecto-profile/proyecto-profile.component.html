@@ -1,0 +1,63 @@
+
+
+  <!--/ Intro Skew Star /-->
+  <div class="intro intro-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-4">Mantenimiento proyectos</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->
+
+  <!--/ Section Blog-Single Star /-->
+  <section class="blog-wrapper sect-pt4" id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="post-box">
+
+
+            <div class="card card-body">
+              <h3 class="box-title m-b-0">Proyecto: {{proyecto.nombre}}</h3>
+              <!-- <p class="text-muted m-b-30 font-13"> {{hospital.nombre}} </p> -->
+              <div class="row">
+                  <div class="col-sm-12 col-xs-6">
+                      <form #f="ngForm" ngMativeValidate (ngSubmit)="guardarProyecto(f)">
+                          <div class="form-group">
+                              <label >Nombre del medico</label>
+                              <input [(ngModel)]="proyecto.nombre" name="nombre" type="text" class="form-control" required  placeholder="Nombre del proyecto">
+                          </div>
+                          <div class="form-group">
+                              <label >Fecha</label>
+                              <input [(ngModel)]="proyecto.date" name="fecha" type="text" class="form-control" required  placeholder="Fecha">
+                          </div>
+                          <button type="submit" class="btn btn-success waves-effect waves-light m-r-10 btn-primary-spacing ">
+                              <i class="fa fa-save"></i>
+                              Guardar
+                          </button>
+                
+                          <button [routerLink]="['/admin/project']" type="reset" class="btn btn-dark waves-effect waves-light m-r-10 btn-primary-spacing ">
+                              <i class="fa fa-close"></i>
+                              Cancelar
+                          </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+
+          </div>
+        </div>
+        <div class="col-md-4" *ngIf="proyecto._id">
+          <div class="card card-body">
+          <h4 class="box-title m-b-0">Fotografia</h4>  
+          <img (click)="cambiarFoto()" [src]="proyecto.img | imagen:'proyecto'" class="img-circle img-fluid pointer">
+          </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Section Blog-Single End /-->

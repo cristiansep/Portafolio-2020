@@ -1,0 +1,133 @@
+
+       <!--/ Intro Skew Star /-->
+ <div class="intro intro-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+  <div class="overlay-mf"></div>
+  <div class="intro-content display-table">
+    <div class="table-cell">
+      <div class="container">
+        <h2 class="intro-title mb-4">Perfil</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Intro Skew End /-->
+
+
+        <section class="blog-wrapper sect-pt4" id="blog">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                
+
+                  <!-- nooooo -->
+
+
+                
+                  <div class="form-comments">
+                    <div class="title-box-2">
+                      <h3 class="title-left">
+                        Actualizar Datos
+                      </h3>
+                    </div>
+
+                    <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar( f.value )" class="form p-t-20">
+                        <div class="form-group">
+                            <label for="exampleInputuname">Nombre de usuario</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="ti-user"></i></div>
+                                <input [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese su nombre de usuario" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputuname">Nick de usuario</label>
+                          <div class="input-group">
+                              <div class="input-group-addon"><i class="ti-user"></i></div>
+                              <input [ngModel]="usuario.nick" name="nick" type="text" class="form-control" placeholder="Ingrese su usuario" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputuname">Perfil de usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="usuario.perfil" name="perfil" type="text" class="form-control" placeholder="Ingrese su Perfil de usuario" required>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Correo electronico</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="ti-email"></i></div>
+                                <input [ngModel]="usuario.email"  name="email" type="email" class="form-control" placeholder="Ingrese su correo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputuname">Telefono de usuario</label>
+                          <div class="input-group">
+                              <div class="input-group-addon"><i class="ti-user"></i></div>
+                              <input [ngModel]="usuario.telefono" name="telefono" type="text" class="form-control" placeholder="Ingrese su nombre de usuario" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputuname">direccion de usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="usuario.direccion" name="direccion" type="text" class="form-control" placeholder="Ingrese su nombre de usuario" required>
+                        </div>
+                    </div>
+                  
+                      <div class="form-group">
+                        <label for="exampleInputuname">descripción de usuario</label>
+                        <textarea class="form-control" [ngModel]="usuario.desc" name="desc" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                        <div class="validation"></div>
+                      </div>
+                 
+                   
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                            <i class="fa fa-save"></i>
+                             Guardar
+                        </button>
+                    </form>
+
+
+                  </div>
+                </div>
+
+
+                <div class="col-md-12">
+               
+                  <div class="widget-sidebar">
+                    <h5 class="sidebar-title">Actualizar Imagen</h5>
+                 
+
+
+                    <div class="card" >
+                        <div class="card-body" Align="center">
+                            <h4 class="card-title">Imagen usuario</h4> 
+                            <h6 class="card-subtitle">{{usuario.nombre}}</h6>
+                            <hr>
+                            <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" class="w150">
+                            <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
+        
+                            <br><br>
+        
+                            <input (change)="seleccionImagen( $event.target.files[0] )" type="file">
+        
+                            <br><br>
+        
+                            <button  (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-success waves-effect waves-light m-r-10">
+                                <i class="fa fa-save"></i>
+                                 Actualizar imagen
+                            </button>
+        
+                      </div>
+                    </div>
+
+                   
+
+                  </div>
+                
+                
+                </div>
+              </div>
+            </div>
+          </section>
+    

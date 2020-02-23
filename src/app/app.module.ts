@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 // Modulos
 import {PagesModule} from './pages/pages.module';
 
+// Servicios 
+import { ServiceModule } from './services/service.module';
+
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import {PagesModule} from './pages/pages.module';
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule
+    PagesModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

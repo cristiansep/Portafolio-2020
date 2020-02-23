@@ -1,0 +1,104 @@
+
+
+      <!--/ Intro Skew Star /-->
+      <div class="intro intro-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <h2 class="intro-title mb-4">Proyectos</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ Intro Skew End /-->
+      
+      
+      
+      <section class="blog-wrapper sect-pt4" id="blog">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+      
+      
+              <!-- nooooo -->
+      
+      
+      
+              <div class="form-comments">
+                <div class="title-box-2">
+                  <h3 class="title-left">
+                    Mis Proyectos
+                  </h3>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+      
+                        <div class="text-right">
+                          <button [routerLink]="['/admin/proyecto/','nuevo']" type="button"
+                            class="btn waves-effect waves-light btn-rounded btn-primary">
+                            <i class="fa fa-plus"></i>
+                            Crear Proyecto
+                          </button>
+                        </div>
+                        <h3 class="card-title">Proyectos registrados (<small>{{totalRegistros}}</small>)</h3>
+      
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>Foto</th>
+                              <th>Proyecto</th>
+                              <th>Fecha</th>
+                              <th></th>
+      
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let proyecto of proyectos">
+                              <td class="w70">
+                                <img [src]="proyecto.img | imagen:'proyecto'" class="img-50">
+                              </td>
+                              <td>
+                                {{proyecto.nombre}}
+                              </td>
+                              <td>
+                                {{proyecto.date | date:'dd-MM-yyyy'}}
+                              </td>
+                              <td>
+      
+                                <button [routerLink]="['/admin/proyecto/', proyecto._id]"
+                                  class="btn btn-primary btn-primary-spacing">
+                                  <i class="fa fa-save"></i>
+                                </button>
+      
+                                <button (click)="borrarProyecto( proyecto )" class="btn btn-danger btn-primary-spacing">
+                                  <i class="fa fa-trash-o"></i>
+                                </button>
+      
+      
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+      
+                        <button (click)="cambiarDesde(-6)" class="btn btn-secondary btn-primary-spacing">
+                          Anteriores
+                        </button>
+      
+                        <button (click)="cambiarDesde(6)" class="btn btn-secondary btn-primary-spacing">
+                          Siguientes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end -->
+      
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

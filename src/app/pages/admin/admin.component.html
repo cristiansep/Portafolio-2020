@@ -1,1 +1,53 @@
-<p>admin works!</p>
+
+       <!--/ Intro Skew Star /-->
+       <div class="intro intro-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <h2 class="intro-title mb-4">Inicio</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ Intro Skew End /-->
+      
+
+
+
+
+
+
+
+<section class="blog-wrapper sect-pt4" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        
+        <div class="box-comments">
+          <div class="title-box-2">
+            <h4 class="title-comments title-left">Mensajes ({{totalRegistros}})</h4>
+          </div>
+          <ul class="list-comments">
+            <li *ngFor="let cliente of clientes">
+              <div class="comment-details">
+                <h4 class="comment-author">{{cliente.nombre}} (<span>{{cliente.fecha | date:'dd-MM-yyyy'}}</span>)</h4>
+                <span>Email: {{cliente.email}}</span>
+                <br>
+                <span>Asunto: {{cliente.asunto}}</span>
+                
+                <p>
+                  {{cliente.mensaje}}
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+
+       
+      </div>
+    
+    </div>
+  </div>
+</section>

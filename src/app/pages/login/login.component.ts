@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-// import { UsuarioModel } from 'src/app/models/usuario.model';
-// import { AuthService } from '../../services/auth.service';
-// import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { UsuarioService } from '../../services/service.index';
+import { Usuario } from '../../models/usuario.model';
+import Swal from 'sweetalert2';
 
-declare function init_plugins();
+declare function init_admin();
 
 @Component({
   selector: 'app-login',
@@ -14,43 +14,34 @@ declare function init_plugins();
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    public usuarioService: UsuarioService,
+
+  ) { }
 
   ngOnInit(): void {
-    init_plugins();
+    init_admin();
   }
 
-  // login(form: NgForm) {
 
-  //   if (form.invalid) { return; }
+  ingresar(forma: NgForm) {
 
-  //   Swal.fire({
-  //     allowOutsideClick: false,
-  //     icon: 'info',
-  //     text: 'Espere por favor'
-  //   });
-  //   Swal.showLoading();
+    if (forma.invalid) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href>Why do I have this issue?</a>'
+      });
+      return;
+    }
 
-  //   this.auth.login(this.usuario)
-  //     .subscribe(resp => {
-  //       console.log(resp);
-  //       Swal.close();
 
-  //       if (this.recordarme) {
-  //           localStorage.setItem('email', this.usuario.email);
-  //       }
-
-  //       this.router.navigateByUrl('/home');
-  //     }, (err) => {
-  //       console.log(err.error.error.message);
-
-  //       Swal.fire({
-  //         icon: 'error',
-  //         title: 'Error de Autenticacion',
-  //         text: err.error.error.message
-  //       });
-  //     });
-
-  // }
+    const usuario = new Usuario(null, null, null, forma.value.email, forma.value.pass);
+    this.usuarioService.login(usuario)
+                        .subscribe(ok => this.router.navigate(['/admin/list']));
+  }
+  
 
 }

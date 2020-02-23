@@ -2,11 +2,11 @@
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Cristian Sepúlveda</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">FullStack JavaScript Developer,Diseñador Web,Freelancer Developer</span><strong class="text-slider"></strong></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        <div class="container" >
+         
+          <h1 *ngFor="let usuario of usuarios" class="intro-title mb-4">{{usuario.nombre}}</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">FullStack Developer, Desarrollo Web, Aplicaciones Moviles</span><strong class="text-slider"></strong></p>
+       
         </div>
       </div>
     </div>

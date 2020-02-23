@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -8,6 +9,11 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { StarServicesComponent } from './star-services/star-services.component';
 import { RouterModule } from '@angular/router';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { MostradorComponent } from './mostrador/mostrador.component';
+import { ModalUploadComponent } from './modal-upload/modal-upload.component';
+import { ProjectModalComponent } from './project-modal/project-modal.component';
 
 
 
@@ -19,11 +25,18 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ContactComponent,
     FooterComponent,
-    StarServicesComponent
+    StarServicesComponent,
+    AdminHeaderComponent,
+    MostradorComponent,
+    ModalUploadComponent,
+    ProjectModalComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    PipesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     NavbarComponent,
@@ -32,7 +45,11 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ContactComponent,
     FooterComponent,
-    StarServicesComponent
+    StarServicesComponent,
+    AdminHeaderComponent,
+    MostradorComponent,
+    ModalUploadComponent,
+    ProjectModalComponent
   ]
 })
 export class ComponentsModule { }

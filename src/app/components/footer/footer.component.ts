@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../../models/usuario.model';
+import { UsuarioService } from '../../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  usuarios: Usuario[] = [];
+
+  fecha: Date = new Date();
+
+  constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.cargarUsuario();
+  }
+
+  cargarUsuario() {
+
+    this.usuarioService.cargarUsuario()
+      .subscribe((resp: any) => {
+        this.usuarios = resp.usuarios;
+      });
   }
 
 }

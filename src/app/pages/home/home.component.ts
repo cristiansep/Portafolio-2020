@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../services/usuario/usuario.service';
 
 declare function init_plugins();
+
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,11 @@ declare function init_plugins();
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public usuarioService: UsuarioService
+  ) {
+    this.usuarioService.cargarStorage();
+  }
 
   ngOnInit(): void {
     init_plugins();

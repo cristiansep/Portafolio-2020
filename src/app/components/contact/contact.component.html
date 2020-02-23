@@ -14,39 +14,44 @@
                     </h5>
                   </div>
                   <div>
-                      <form action="" method="post" role="form" class="contactForm">
-                      <div id="sendmessage">Your message has been sent. Thank you!</div>
-                      <div id="errormessage"></div>
+
+
+
+                      <form ngNativeValidate [formGroup]="forma" (ngSubmit)="registrarCliente()"  action="" method="post" role="form" class="contactForm">
+                   
                       <div class="row">
                         <div class="col-md-12 mb-3">
                           <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                            <div class="validation"></div>
+                            <input formControlName="nombre" type="text" name="nombre" class="form-control" required placeholder="Su nombre"  data-msg="Please enter at least 4 chars" />
+                          
                           </div>
                         </div>
                         <div class="col-md-12 mb-3">
                           <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                            <div class="validation"></div>
+                            <input formControlName="email" type="email" class="form-control" name="email" required   placeholder="Su correo electronico" data-msg="Please enter a valid email" />
+                          
                           </div>
                         </div>
                         <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                              <div class="validation"></div>
+                              <input formControlName="asunto" type="text" class="form-control" name="asunto" required  placeholder="Asunto"  data-msg="Please enter at least 8 chars of subject" />
+                         
                             </div>
                         </div>
                         <div class="col-md-12 mb-3">
                           <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                            <div class="validation"></div>
+                            <textarea formControlName="mensaje" class="form-control" name="mensaje" rows="5" required  data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                           
                           </div>
                         </div>
                         <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                          <button type="submit" class="button button-a button-big button-rouded">Enviar</button>
                         </div>
                       </div>
                     </form>
+
+
+
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -55,25 +60,22 @@
                       Ponte en contacto
                     </h5>
                   </div>
-                  <div class="more-info">
+                  <div class="more-info" >
                     <p class="lead">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                      expedita aperiam aliquid at.
-                      Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                      mollitia inventore?
+                      Si necesitas asesoramiento para la creación de una aplicación web, movil, o de cualquier tipo, no dudes en contactarme.
                     </p>
-                    <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                      <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                      <li><span class="ion-email"></span> contact@example.com</li>
+                    <ul class="list-ico" *ngFor="let usuario of usuarios">
+                      <li><span class="ion-ios-location"></span> {{usuario.direccion}}</li>
+                      <li><span class="ion-ios-telephone"></span> {{usuario.telefono}}</li>
+                      <li><a href="https://gmail.com" target="_blank"><span class="ion-email"></span> {{usuario.email}}</a></li>
                     </ul>
                   </div>
                   <div class="socials">
                     <ul>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
+                      <li><a href="https://github.com/cristiansep" target="_blank"><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
+                      <li><a href="https://instagram.com/crist_sep" target="_blank"><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+                      <li><a href="https://twitter.com/crist_sepulveda" target="_blank"><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
+                      <li><a href="https://linkedin.com/in/cristiansep" target="_blank"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
                     </ul>
                   </div>
                 </div>
