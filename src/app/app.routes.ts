@@ -11,17 +11,17 @@ import { ProyectoProfileComponent } from './pages/proyecto-profile/proyecto-prof
 
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent },
+    { path: 'home', component: HomeComponent, data: { titulo: 'Home | Cristian Sepúlveda' } },
     { path: 'login', component: LoginComponent },
     {
         path: 'admin',
         component: PagesComponent,
         canActivate: [LoginGuardGuard],
         children: [
-            { path: 'list', component: AdminComponent },
-            { path: 'project', component: ProyectosComponent },
-            { path: 'proyecto/:id', component: ProyectoProfileComponent },
-            { path: 'profile', component: ProfileComponent, data: {titulo: 'Perfil de usuario'} }
+            { path: 'list', component: AdminComponent, data: { titulo: 'Mensajes' } },
+            { path: 'project', component: ProyectosComponent, data: { titulo: 'Proyectos' } },
+            { path: 'proyecto/:id', component: ProyectoProfileComponent, data: { titulo: 'Mantenimiento proyectos' } },
+            { path: 'profile', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } }
         ]
     },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
