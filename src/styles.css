@@ -45,8 +45,23 @@ margin-bottom: 5px !important;
     height: 100%;
     z-index: 9999;
 }
-
-
 .master{
     width: 100%;
+}
+.modal-resume{
+    margin-top: 10px;
+}
+
+.modal-resume-lg {
+    max-width: 75% !important;
+    overflow-y: initial !important;
+    margin: 0 auto;
+   
+   
+}
+
+.modal-body-resume{
+    height: 500px;
+    overflow-y: auto;  
+    padding: 0 !important;
 }

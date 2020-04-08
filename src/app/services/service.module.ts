@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
 import { ProjectModalService } from '../components/project-modal/project-modal.service';
+import { ResumeService } from '../components/resume/resume.service';
 
 import {
   UsuarioService,
@@ -25,7 +26,8 @@ import {
     SubirArchivoService,
     ModalUploadService,
     ProjectModalService,
-    ClienteService
+    ClienteService,
+    ResumeService
   ]
 })
 export class ServiceModule { }

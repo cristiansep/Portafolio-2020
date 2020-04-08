@@ -95,6 +95,26 @@ export class UsuarioService {
   }
 
 
+  crearUsuario(usuario: Usuario) {
+    const url = URL_SERVICIOS + '/usuario';
+    return this.http.post(url , usuario )
+                    .pipe(map((resp: any) => {
+                      Swal.fire({
+                        icon: 'success',
+                        title: usuario.email
+                      });
+                      return resp.usuario;
+                    }), catchError(err => {
+                      Swal.fire({
+                        icon: 'error',
+                        title: err.error.mensaje,
+                        text: err.error.errors.message
+                      });
+                      return throwError(err);
+                    }));
+  }
+
+
 
   actualizarUsuario(usuario: Usuario) {
 

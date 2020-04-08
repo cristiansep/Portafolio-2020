@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { PagesComponent } from './pages.component';
 import { ProyectoProfileComponent } from './proyecto-profile/proyecto-profile.component';
+import { RegisterComponent } from './login/register.component';
 
 
 
@@ -24,6 +25,7 @@ import { ProyectoProfileComponent } from './proyecto-profile/proyecto-profile.co
   declarations: [
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
     UsuarioComponent,
     AdminComponent,
     ProyectosComponent,
@@ -41,7 +43,8 @@ import { ProyectoProfileComponent } from './proyecto-profile/proyecto-profile.co
   ],
   exports: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class PagesModule { }

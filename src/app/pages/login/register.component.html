@@ -1,0 +1,54 @@
+
+<section id="wrapper">
+    <div class="login-register " style="background-image:url(assets/img/portfolio-bg.jpg);">
+      <div class="login-box card animated fadeInDownBig">
+        <div class="card-body ">
+  
+          <form ngNativeValidate [formGroup]="forma" class="form p-t-20" (ngSubmit)="registrarUsuario()">
+            <h3 class="box-title m-b-20">Iniciar Sesión</h3>
+            <div class="form-group ">
+              <div class="col-xs-12">
+                <input formControlName="nombre" name="nombre" class="form-control" type="text" required placeholder="Nombre"> </div>
+            </div>
+            <div class="form-group ">
+                <div class="col-xs-12">
+                  <input formControlName="nick" name="nick" class="form-control" type="text" required placeholder="Usuario"> </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-xs-12">
+                  <input formControlName="perfil" name="perfil" class="form-control" type="text" required placeholder="Perfil"> </div>
+              </div>
+              <div class="form-group ">
+                <div class="col-xs-12">
+                  <input formControlName="email" name="email" class="form-control" type="email" required placeholder="Email"> </div>
+              </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <input formControlName="password" name="password" class="form-control" type="password" required placeholder="Contraseña"> </div>
+            </div>
+            <!-- <div class="form-group">
+                <div class="col-xs-12">
+                  <input formControlName="telefono" name="telefono" class="form-control" type="text" required placeholder="Telefono"> </div>
+              </div> -->
+            <div class="form-group text-center">
+              <div class="col-xs-12 p-b-20">
+                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Ingresar</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                
+              </div>
+            </div>
+            <div class="form-group m-b-0">
+                <div class="col-sm-12 text-center">
+                     ¿Tienes una cuenta? <a routerLink="/login" class="text-info m-l-5"><b>Ingresa ahora</b></a>
+                </div>
+            </div>
+            
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  </section>

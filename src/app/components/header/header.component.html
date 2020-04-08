@@ -5,7 +5,14 @@
         <div class="container" >
          
           <h1 *ngFor="let usuario of usuarios" class="intro-title mb-4">{{usuario.nombre}}</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">FullStack Developer, Desarrollo Web, Aplicaciones Moviles</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">FullStack Developer, Desarrollo Web y Movil</span><strong class="text-slider"></strong></p>
+
+          <br>
+          <br>
+          <button  (click)="generarResume()" class="btn btn-outline-light waves-effect waves-light m-r-10">
+            <i class="fas fa-file"></i>
+             Ver Curriculum
+        </button>
        
         </div>
       </div>

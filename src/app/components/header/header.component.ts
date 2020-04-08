@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { Usuario } from '../../models/usuario.model';
+import { ResumeService } from '../resume/resume.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,10 @@ export class HeaderComponent implements OnInit {
 
   usuarios: Usuario[] = [];
 
-  constructor(public usuarioService: UsuarioService) { }
+  constructor(
+    public usuarioService: UsuarioService,
+    public resumeService: ResumeService
+    ) { }
 
   ngOnInit(): void {
     this.cargarUsuario();
@@ -26,6 +30,12 @@ export class HeaderComponent implements OnInit {
       .subscribe((resp: any) => {
         this.usuarios = resp.usuarios;
       });
+  }
+
+
+  generarResume() {
+    this.resumeService.mostrarResume();
+
   }
 
 }

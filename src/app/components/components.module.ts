@@ -14,6 +14,9 @@ import { PipesModule } from '../pipes/pipes.module';
 import { MostradorComponent } from './mostrador/mostrador.component';
 import { ModalUploadComponent } from './modal-upload/modal-upload.component';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
+import { ResumeComponent } from './resume/resume.component';
+
+
 
 
 
@@ -29,7 +32,8 @@ import { ProjectModalComponent } from './project-modal/project-modal.component';
     AdminHeaderComponent,
     MostradorComponent,
     ModalUploadComponent,
-    ProjectModalComponent
+    ProjectModalComponent,
+    ResumeComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +53,8 @@ import { ProjectModalComponent } from './project-modal/project-modal.component';
     AdminHeaderComponent,
     MostradorComponent,
     ModalUploadComponent,
-    ProjectModalComponent
+    ProjectModalComponent,
+    ResumeComponent
   ]
 })
 export class ComponentsModule { }

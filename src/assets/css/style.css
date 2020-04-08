@@ -320,8 +320,8 @@ body {
     width: 44px;
     height: 44px;
     text-align: center;
-    line-height: 1;
-    font-size: 16px;
+    /* line-height: 1; */
+    font-size: 24px;
     border-radius: 50%;
     right: 15px;
     bottom: 15px;
@@ -331,7 +331,7 @@ body {
   
   .back-to-top i {
     padding-top: 12px;
-    color: #fff;
+    color: #fff; 
   }
   
   /* Prelaoder */
@@ -1258,5 +1258,19 @@ body {
       bottom: 15px;
     }
   }
+
+
+
+
+
+
+
+
+ 
+
+
+
+     
+
 
 

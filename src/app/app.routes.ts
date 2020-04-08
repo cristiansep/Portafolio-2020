@@ -8,11 +8,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PagesComponent } from './pages/pages.component';
 import { ProjectModalComponent } from './components/project-modal/project-modal.component';
 import { ProyectoProfileComponent } from './pages/proyecto-profile/proyecto-profile.component';
+import { RegisterComponent } from './pages/login/register.component';
 
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent, data: { titulo: 'Home | Cristian Sepúlveda' } },
-    { path: 'login', component: LoginComponent },
+    { path: 'login', component: LoginComponent, data: { titulo: 'Login | Cristian Sepúlveda' } },
+    // { path: 'register', component: RegisterComponent },
     {
         path: 'admin',
         component: PagesComponent,
